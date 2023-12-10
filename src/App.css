@@ -1,9 +1,13 @@
-.App {
+body {
   background-color: #282c34;
+}
+
+.App {
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
   text-align: center;
@@ -14,6 +18,11 @@
   color: #fff;
 }
 
+main {
+  height: -webkit-fill-available;
+}
+
+main,
 .chart-container {
   width: 100%;
   text-align: center;
@@ -33,12 +42,11 @@
 }
 
 @media only screen and (max-width: 425px) {
-  h1{
+  h1 {
     font-size: 32px;
   }
-  
-  .chart{
-    width: 280px;
 
+  .chart {
+    width: 280px;
   }
 }

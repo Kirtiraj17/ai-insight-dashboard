@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import BarChart from "./BarChart";
+import LineChart from "./LineChart";
+import PieChart from "./PieChart";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,12 +13,6 @@ import {
   LineElement,
   ArcElement,
 } from "chart.js";
-import { fetchData } from "../MockAPIService";
-import BarChart from "./BarChart";
-import LineChart from "./LineChart";
-import PieChart from "./PieChart";
-import { useDispatch, useSelector } from "react-redux";
-import { setData } from "../redux/actions";
 // import DoughnutChart from "./DoughnutChart";
 
 // Register the chart js elements
@@ -32,27 +28,7 @@ ChartJS.register(
   Legend
 );
 
-const Chart: React.FC = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state: any) => state.data);
-
-  useEffect(() => {
-    // fetchChartData function to fetch the data from the json simulated as api call
-    const fetchChartData = async () => {
-      try {
-        const result = await fetchData();
-        // dispatch setData action to save the received data in the store
-        dispatch(setData(result));
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchChartData();
-  }, [dispatch]);
-
-  console.log(data, "data");
-
+const Chart = ({ data }: { data: any }) => {
   return (
     <div className="chart-container">
       {/* Bar chart for category distribution */}
