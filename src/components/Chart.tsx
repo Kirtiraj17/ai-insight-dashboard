@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { Bar, Line, Pie } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,6 +15,7 @@ import { fetchData } from "../MockAPIService";
 import BarChart from "./BarChart";
 import LineChart from "./LineChart";
 import PieChart from "./PieChart";
+import DoughnutChart from "./DoughnutChart";
 
 ChartJS.register(
   CategoryScale,
@@ -76,14 +76,6 @@ const Chart: React.FC = () => {
         />
       )}
 
-      {/* Pie chart for user satisfaction ratings */}
-      {data?.user_satisfaction && data?.user_satisfaction?.ratings && (
-        <PieChart
-          title="User Satisfaction Ratings"
-          labels={data?.user_satisfaction?.ratings}
-        />
-      )}
-
       {/* Bar chart for usage statistics by platform */}
       {data?.usage_statistics && data?.usage_statistics?.by_platform && (
         <BarChart
@@ -101,6 +93,31 @@ const Chart: React.FC = () => {
           labelName="Number of Users"
         />
       )}
+
+      {/* Pie chart for user satisfaction ratings */}
+      {data?.user_satisfaction && data?.user_satisfaction?.ratings && (
+        <PieChart
+          title="User Satisfaction Ratings"
+          labels={data?.user_satisfaction?.ratings}
+        />
+      )}
+
+      {/* {data?.response_times && (
+        <div>
+          {data?.response_times?.day_wise && (
+            <DoughnutChart
+              title="Response Time (Day Wise)"
+              labels={data?.response_times?.day_wise}
+            />
+          )}
+          {data?.response_times?.week_wise && (
+            <DoughnutChart
+              title="Response Time (Week Wise)"
+              labels={data?.response_times?.week_wise}
+            />
+          )}
+        </div>
+      )} */}
     </div>
   );
 };

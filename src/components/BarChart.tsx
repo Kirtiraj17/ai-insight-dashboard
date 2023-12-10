@@ -11,9 +11,7 @@ const BarChart = ({ title, labels, labelName }: { title: string, labels: any; la
           datasets: [
             {
               label: labelName,
-              backgroundColor: "rgba(75,192,192,1)",
-              // borderColor: "rgba(0,0,0,1)",
-              // borderWidth: 2,
+              backgroundColor: ["rgba(75,192,192,1)", "pink", "purple", "orange"],
               data: Object.values(labels),
             },
           ],
