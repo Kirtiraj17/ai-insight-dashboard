@@ -17,6 +17,7 @@ const LineChart = ({ title, labels, labelName }: { title: string, labels: any; l
               data: labels.map(
                 (item: any) => item.average_time
               ),
+              tension: 0.3
             },
           ],
         }}
