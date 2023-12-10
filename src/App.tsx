@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         <h1>AI Insights Dashboard</h1>
       </header>
+      {/* Charts container */}
       <Chart />
     </div>
   );

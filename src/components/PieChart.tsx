@@ -1,19 +1,24 @@
 import { Pie } from "react-chartjs-2";
 
-const BarChart = ({ title, labels }: { title: string, labels: any }) => {
+type Labels = {
+  rating: number;
+  count: number;
+}
+
+const BarChart = ({ title, labels }: { title: string, labels: Labels[] }) => {
   return (
     <div className="chart">
       <h3>{title}</h3>
 
       <Pie
         data={{
-          labels: labels.map((item: any) =>
+          labels: labels.map((item) =>
             item?.rating.toString()
           ),
           datasets: [
             {
               data: labels.map(
-                (item: any) => item?.count
+                (item) => item?.count
               ),
               backgroundColor: [
                 "#FF6384",
