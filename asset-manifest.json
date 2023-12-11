@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ai-insight-dashboard/static/css/main.f430dbe5.css",
+    "main.js": "/ai-insight-dashboard/static/js/main.7fe4c16d.js",
+    "index.html": "/ai-insight-dashboard/index.html",
+    "main.f430dbe5.css.map": "/ai-insight-dashboard/static/css/main.f430dbe5.css.map",
+    "main.7fe4c16d.js.map": "/ai-insight-dashboard/static/js/main.7fe4c16d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f430dbe5.css",
+    "static/js/main.7fe4c16d.js"
+  ]
+}
